@@ -24,8 +24,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         "1Ipsum ipsum",
         "2Ipsum ipsum",
         "3Ipsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsum",
+        "4Ipsum ipsumIpsum ipsum",
+        "2Ipsum ipsum",
+        "4Ipsum ipsumIpsum ipsum",
+        "4Ipsum ipsumIpsum ipsum",
+        "psum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsumIpsum ipsum",
         "4Ipsum ipsumIpsum ipsum"
-
 
     ]
 
@@ -40,22 +44,16 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CustomCellCollectionViewCell
-        cell.textLabel.text = cellTitles[indexPath.row]
-
-        guard let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        guard let customCell = cell as? CustomCellCollectionViewCell,
+            let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
             return cell
         }
+        customCell.textLabel.text = cellTitles[indexPath.row]
 
-        let width = collectionView.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
-        cell.constrain(to: width)
-        
-        return cell
+        let availableWidth = collectionView.frame.width - (flowLayout.sectionInset.left + flowLayout.sectionInset.right)
+
+        customCell.constrain(to: availableWidth)
+        return customCell
     }
 }
-
-extension ViewController: UICollectionViewDelegateFlowLayout {
-
-}
-

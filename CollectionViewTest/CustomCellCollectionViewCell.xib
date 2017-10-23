@@ -13,17 +13,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" reuseIdentifier="Cell" id="gTV-IL-0wX" customClass="CustomCellCollectionViewCell" customModule="CollectionViewTest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="203" height="76"/>
+            <rect key="frame" x="0.0" y="0.0" width="203" height="35"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="203" height="76"/>
+                <rect key="frame" x="0.0" y="0.0" width="203" height="35"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Bp-xq-PCv">
-                        <rect key="frame" x="0.0" y="0.0" width="203" height="76"/>
+                        <rect key="frame" x="0.0" y="0.0" width="203" height="35"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ2-6J-f4d">
-                                <rect key="frame" x="8" y="8" width="187" height="21"/>
+                                <rect key="frame" x="8" y="8" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <color key="textColor" red="0.9980931878" green="0.75772172209999999" blue="0.032601628450000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -31,11 +31,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.089281536640000006" green="0.61762189869999995" blue="0.56997865439999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ZQ2-6J-f4d" firstAttribute="leading" secondItem="9Bp-xq-PCv" secondAttribute="leadingMargin" id="06R-sM-2xM"/>
-                            <constraint firstAttribute="width" constant="203" id="DGI-nD-lex"/>
+                            <constraint firstItem="ZQ2-6J-f4d" firstAttribute="leading" secondItem="9Bp-xq-PCv" secondAttribute="leadingMargin" priority="999" id="06R-sM-2xM"/>
+                            <constraint firstAttribute="width" priority="999" constant="203" id="DGI-nD-lex"/>
                             <constraint firstItem="ZQ2-6J-f4d" firstAttribute="top" secondItem="9Bp-xq-PCv" secondAttribute="topMargin" id="WbK-UB-u5W"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZQ2-6J-f4d" secondAttribute="trailing" id="WtI-Bj-xdz"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZQ2-6J-f4d" secondAttribute="bottom" id="dba-b2-yYF"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="ZQ2-6J-f4d" secondAttribute="trailing" id="WtI-Bj-xdz"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZQ2-6J-f4d" secondAttribute="bottom" priority="999" id="dba-b2-yYF"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -46,12 +46,12 @@
                 <constraint firstItem="9Bp-xq-PCv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="eDs-Xl-cjD"/>
                 <constraint firstItem="9Bp-xq-PCv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yLn-d2-k7j"/>
             </constraints>
-            <size key="customSize" width="203" height="76"/>
+            <size key="customSize" width="203" height="35"/>
             <connections>
                 <outlet property="textLabel" destination="ZQ2-6J-f4d" id="5Ga-bd-spV"/>
                 <outlet property="widthConstraint" destination="DGI-nD-lex" id="FG8-7f-uct"/>
             </connections>
-            <point key="canvasLocation" x="110.5" y="67"/>
+            <point key="canvasLocation" x="110.5" y="46.5"/>
         </collectionViewCell>
     </objects>
 </document>

@@ -12,18 +12,25 @@ class CustomCellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var textLabel: UILabel!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
-    }
-
     func constrain(to width: CGFloat) {
-        let halfWidth = width/2
+        // Needs to know what size the textLabel wants to be
+        setNeedsLayout()
+        layoutIfNeeded()
+
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+
         var cellContentWidth: CGFloat
-        if textLabel.sizeThatFits(contentView.frame.size).width > halfWidth {
+
+        let halfWidth = width/2
+        let spaceBetweenItems: CGFloat = 5
+
+        let textLabelWidth = textLabel.systemLayoutSizeFitting(UILayoutFittingCompressedSize).width
+        let contentViewInsets = contentView.layoutMargins.left - contentView.layoutMargins.right
+
+        if textLabelWidth > halfWidth - contentViewInsets {
             cellContentWidth = width
         } else {
-            cellContentWidth = halfWidth - 10 // whatever the space between them is supposed to be
+            cellContentWidth = halfWidth - spaceBetweenItems
         }
 
         widthConstraint.constant = cellContentWidth
